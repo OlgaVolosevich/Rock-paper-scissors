@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.icon-hand-grab-o:before {
+    content: "\f255";
+}
+.icon-hand-rock-o:before {
+    content: "\f255";
+}
+.icon-hand-scissors-o:before {
+    content: "\f256";
+}
