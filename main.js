@@ -1,10 +1,7 @@
 "use strict";
 
 window.onload = function () {
-  const options = Array.from(
-    document.getElementsByClassName("options__item-wrapper")
-  );
-  console.log(options);
+
   class Player {
     variants = [`rock`, `paper`, `scissors`];
     chooseVariant() {
@@ -18,37 +15,73 @@ window.onload = function () {
 
   const computer = new Player();
 
-  class GameManager {
+  class DomManager {
+    _options = Array.from(
+      document.getElementsByClassName("options__item-wrapper")
+    );
     _root = document.getElementsByClassName("results")[0];
+    _winAlert = `You won!`;
+    _loseAlert = `Sorry, you lost`;
+    _drawAlert = `It is a draw!`;
+    showAlert(alert) {
+      const htmlElement = `<p class="results__alert">${alert}</p>`;
+      return (this._root.innerHTML += htmlElement);
+    }
+    showDrawAlert() {
+      return this.showAlert(this._drawAlert);
+    }
+    showWinAlert() {
+      return this.showAlert(this._winAlert);
+    }
+    showLoseAlert() {
+      this.showAlert(this._loseAlert);
+    }
+    getOptions() {
+      return this._options;
+    }
+  }
+
+  const domManager = new DomManager();
+
+  class GameManager {
+    _winCases = {
+      scissors: `paper`,
+      paper: `rock`,
+      rock: `scissors`,
+    };
     getPlayersDesidion(userChoise) {
-      const computerVariant = computer.play();
-      const userVariant = userChoise;
       return {
-        user: userVariant,
-        computer: computerVariant,
+        USER_CHOICE: userChoise,
+        COMPUTER_CHOICE: computer.play(),
       };
     }
 
     checkIfDraw(user, computer) {
       return user === computer;
     }
-    showDrawAlert() {
-      const ALERT = `<p class="results__draw-alert">It is a draw!</p>`;
-      return (this._root.innerHTML += ALERT);
+    checkWin(user, computer) {
+      return this._winCases[user] === computer;
     }
     processResults(userChoise) {
-      const choices = this.getPlayersDesidion(userChoise);
-      const { user: USER_CHOICE, computer: COMPUTER_CHOICE } = choices;
+      const { USER_CHOICE, COMPUTER_CHOICE } = this.getPlayersDesidion(
+        userChoise
+      );
       const isDraw = this.checkIfDraw(USER_CHOICE, COMPUTER_CHOICE);
       if (isDraw) {
-        return this.showDrawAlert();
+        return domManager.showDrawAlert();
+      }
+      const isWin = this.checkWin(USER_CHOICE, COMPUTER_CHOICE);
+      if (isWin) {
+        return domManager.showWinAlert();
+      } else {
+        return domManager.showLoseAlert();
       }
     }
   }
 
   const gameManager = new GameManager();
 
-  options.forEach((option) => {
+  domManager.getOptions().forEach((option) => {
     option.addEventListener("click", (event) => {
       gameManager.processResults(event.currentTarget.dataset.variant);
     });
