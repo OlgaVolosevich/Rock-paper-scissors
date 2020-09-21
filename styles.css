@@ -1,11 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
 }
 
 main {
     margin: 0 auto;
     max-width: 1200px;
+   /* position: relative;*/
 }
 
 .icon-hand-grab-o:before {
@@ -16,4 +19,15 @@ main {
 }
 .icon-hand-scissors-o:before {
     content: "\f256";
+}
+
+.icon-close:before {
+    content: "\f00d";
+  }
+
+.options {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
 }

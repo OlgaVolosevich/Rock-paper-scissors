@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 import computer from "./../ComputerPlayer/script.js";
 import domManager from "./../DomManager/script.js";
 class GameManager {
@@ -26,13 +26,14 @@ class GameManager {
     );
     const isDraw = this.checkIfDraw(USER_CHOICE, COMPUTER_CHOICE);
     if (isDraw) {
-      return domManager.showDrawAlert();
+      return domManager.showResults("draw", USER_CHOICE, COMPUTER_CHOICE);
+      
     }
     const isWin = this.checkWin(USER_CHOICE, COMPUTER_CHOICE);
     if (isWin) {
-      return domManager.showWinAlert();
+      return domManager.showResults("win", USER_CHOICE, COMPUTER_CHOICE);
     } else {
-      return domManager.showLoseAlert();
+      return domManager.showResults("lose", USER_CHOICE, COMPUTER_CHOICE);
     }
   }
 }

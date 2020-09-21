@@ -1,0 +1,26 @@
+.options__item-wrapper {
+    min-height: 200px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+.options__item {
+    font-size: 5rem;
+}
+
+.options__title {
+    grid-column: 1/4;
+}
+.results {
+    border: 1px solid gray;
+}
+
+.results__close-btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
