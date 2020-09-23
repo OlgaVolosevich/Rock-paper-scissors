@@ -11,14 +11,31 @@
 </head>
 <body>
     <main>
+        <div class="score">
+            <div class="score__count">
+                <p class="score__title">You: 0</p>
+            </div>
+            <div class="score__count">
+                <p class="score__title">Computer: 0</p>
+            </div>
+        </div>
+        <div class="results">
+            <h1 class="results__alert">Click on any icon to start the game</h1>
+            <div class="results__container">
+                <div class="results__user">
+                    <h2 class="results__title">You</h2>
+                    <div class="results__item-wrapper user-result"></div>
+                </div>
+                <div class="results__computer">
+                    <h2 class="results__title">Computer</h2>
+                    <div class="results__item-wrapper comp-result"></div>
+                </div>
+            </div>
+        </div>
         <div class="options">
-            <h1 class="options__title">Click on any icon to start the game</h1>
             <div data-variant="rock" class="options__item-wrapper"><i class="options__item icon-hand-grab-o"></i></div>
             <div data-variant="paper" class="options__item-wrapper"><i class="options__item icon-hand-rock-o"></i></div>
             <div data-variant="scissors" class="options__item-wrapper"><i class="options__item icon-hand-scissors-o"></i></div>
-        </div>
-        <div class="results">
-            <div class="results__container"></div>
         </div>
     </main>
     <script type="module" src="components/GameManager/script.js"></script>

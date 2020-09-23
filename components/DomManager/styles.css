@@ -1,5 +1,11 @@
+.score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
 .options__item-wrapper {
-    min-height: 200px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -15,12 +21,35 @@
     grid-column: 1/4;
 }
 .results {
-    border: 1px solid gray;
+    display: grid;
+    grid-template-rows: 100px 1fr;
 }
 
-.results__close-btn {
-    cursor: pointer;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
+.results__alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.results__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.results__user, .results__computer {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.results__item {
+    font-size: 5rem;
+}
+
+.results__item-wrapper {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
