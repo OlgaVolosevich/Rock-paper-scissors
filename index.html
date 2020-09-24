@@ -13,10 +13,10 @@
     <main>
         <div class="score">
             <div class="score__count">
-                <p class="score__title">You: 0</p>
+                <p class="score__title">You: <span class="score__user">0</span></p>
             </div>
             <div class="score__count">
-                <p class="score__title">Computer: 0</p>
+                <p class="score__title">Computer: <span class="score__computer">0</span></p>
             </div>
         </div>
         <div class="results">
@@ -24,11 +24,15 @@
             <div class="results__container">
                 <div class="results__user">
                     <h2 class="results__title">You</h2>
-                    <div class="results__item-wrapper user-result"></div>
+                    <div class="results__item-wrapper user-result">
+                        <i class="results__item icon-hand-rock-o"></i>
+                    </div>
                 </div>
                 <div class="results__computer">
                     <h2 class="results__title">Computer</h2>
-                    <div class="results__item-wrapper comp-result"></div>
+                    <div class="results__item-wrapper comp-result">
+                        <i class="results__item icon-hand-rock-o"></i>
+                    </div>
                 </div>
             </div>
         </div>
