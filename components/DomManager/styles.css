@@ -10,16 +10,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid gray;
+    background-color: teal;
+    height: 100px;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+
+.options__item-wrapper:hover{
+    background-color: rgb(3, 160, 160);
 }
 
 .options__item {
-    font-size: 5rem;
+    color: white;
+    font-size: 3.5rem;
 }
 
 .options__title {
     grid-column: 1/4;
 }
+
 .results {
     display: grid;
     grid-template-rows: 100px 1fr;
@@ -29,11 +38,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color:rgb(2, 168, 168);
 }
 
 .results__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
 }
 
 .results__user, .results__computer {
@@ -53,3 +64,11 @@
     align-items: center;
 }
 
+.score__title {
+    color:rgb(4, 153, 153);
+    
+}
+
+.score__title > span {
+    color: white;
+}

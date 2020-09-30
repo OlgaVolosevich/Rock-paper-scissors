@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(47, 47, 83);
+    color: white;
+}
+
 main {
     margin: 0 auto;
     padding-top: 30px;
@@ -30,6 +35,7 @@ main {
 
 .options {
     display: grid;
+    align-items: flex-end;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
 }

@@ -20,7 +20,7 @@ class DomManager {
   };
   _variants = {
     scissors: `<i class="results__item icon-hand-scissors-o"></i>`,
-    rock: `<i class="options__item icon-hand-grab-o">`,
+    rock: `<i class="results__item icon-hand-grab-o">`,
     paper: `<i class="results__item icon-hand-rock-o"></i>`,
   };
   showScore(winner, score) {
